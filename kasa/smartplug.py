@@ -2,7 +2,7 @@
 import logging
 from typing import Any, Dict
 
-from kasa.modules import Antitheft, Cloud, Schedule, Time, Usage
+from kasa.modules import Antitheft, Cloud, Schedule, Time, Usage, Motion, AmbientLight
 from kasa.smartdevice import DeviceType, SmartDevice, requires_update
 
 _LOGGER = logging.getLogger(__name__)
@@ -45,6 +45,9 @@ class SmartPlug(SmartDevice):
         self.add_module("antitheft", Antitheft(self, "anti_theft"))
         self.add_module("time", Time(self, "time"))
         self.add_module("cloud", Cloud(self, "cnCloud"))
+        self.add_module("motion", Motion(self, "smartlife.iot.PIR"))
+        self.add_module("ambient", AmbientLight(self, "smartlife.iot.LAS"))
+
 
     @property  # type: ignore
     @requires_update
