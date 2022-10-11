@@ -45,9 +45,8 @@ class SmartPlug(SmartDevice):
         self.add_module("antitheft", Antitheft(self, "anti_theft"))
         self.add_module("time", Time(self, "time"))
         self.add_module("cloud", Cloud(self, "cnCloud"))
-        self.add_module("motion", Motion(self, "smartlife.iot.PIR"))
-        self.add_module("ambient", AmbientLight(self, "smartlife.iot.LAS"))
-
+        # self.add_module("motion", Motion(self, "smartlife.iot.PIR"))
+        # self.add_module("ambient", AmbientLight(self, "smartlife.iot.LAS"))
 
     @property  # type: ignore
     @requires_update
